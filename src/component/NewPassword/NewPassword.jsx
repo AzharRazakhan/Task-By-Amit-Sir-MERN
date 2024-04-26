@@ -29,7 +29,7 @@ export default function NewPassword() {
       console.log(values)
       values.userId = userId
       values.token = token
-      const result = postMethodData('http://localhost:3000/resetPassword','POST',values)
+      const result = postMethodData('resetPassword','POST',values)
        result.then((json) => {
          setIsLoading(true);
         console.log(json)

@@ -1,6 +1,8 @@
+import configure from "../configure";
+
 
 export const  postMethodToken = (url,methodName,token) => {
- return fetch(url, {
+ return fetch(configure.backendUrl + url, {
   method: methodName, // Use the GET method to retrieve profile information
   headers: {
     'Authorization': 'JWT ' + token, // Include any authorization token if required
@@ -17,7 +19,9 @@ export const  postMethodToken = (url,methodName,token) => {
 
 
 export const postMethodData = (url,methodName,values) => {
-   return fetch(url, {
+  console.log(configure.backendUrl)
+
+   return fetch(configure.backendUrl + url, {
         method: methodName, // Specify the HTTP method as POST
       headers: {
     'Content-Type': 'application/json', // Specify the content type as JSON

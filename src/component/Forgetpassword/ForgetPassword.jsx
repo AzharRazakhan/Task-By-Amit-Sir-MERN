@@ -19,7 +19,7 @@ export default function Forgetpassword() {
     validationSchema:forgetPasswordValidation,
     onSubmit:(value) => {
       console.log(value)
-      const result = postMethodData('http://localhost:3000/sendMail','POST',value)
+      const result = postMethodData('sendMail','POST',value)
     result.then(json => {
       setIsLoading(true);
       if(Object.keys(json).length > 0) {    
@@ -28,8 +28,6 @@ export default function Forgetpassword() {
           setIsLoading(false);
           alert('Mail is Send on your Email Address')
                 }, 2000);
-                
-
       }})
     },
   

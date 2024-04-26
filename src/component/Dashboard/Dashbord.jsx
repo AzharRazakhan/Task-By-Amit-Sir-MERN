@@ -10,7 +10,7 @@ function Dashboard(){
     const redirect = useNavigate()
 
  useEffect(() => {
-    const response = postMethodToken('http://localhost:3000/auth/profile','POST',token);
+    const response = postMethodToken('auth/profile','POST',token);
     response.then(profileData => {
           setUserData(profileData)
         })

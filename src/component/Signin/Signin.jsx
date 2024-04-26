@@ -19,7 +19,7 @@ export default function Signin() {
     initialValues:initialState,
     validationSchema:signInValidations,
     onSubmit:values=> {
-    const response =  postMethodData('http://localhost:3000/auth/sign_in','POST',values)
+    const response =  postMethodData('auth/sign_in','POST',values)
     response.then(json => {
       console.log(response);
       setIsLoading(true);
@@ -40,81 +40,6 @@ export default function Signin() {
     }
     
 
-//Normal Form
-  // const [email,setEmail] = useState('')
-  // const [password,setPassword] = useState('')
-
-  // const handleSubmit = (e) =>{
-  //   e.preventDefault()
-  //   console.log(email,password)   
-  //   // axios.post("http://localhost:5000/user", {
-  //   //         name,
-  //   //         email
-  //   //         // header
-  //   //     }).then(redirect("/read")).catch((err) => console.log(err))
-
-  // }
-
-
-  // const [formData,setFormData] = useState({
-  //   email:'',
-  //   password:''
-  // })
-
-  // const [error,setError] = useState({})
-    
-  // const handleInput = (e) => {
-  //   const name = e?.target?.name
-  //   const value = e?.target?.value
-  //   setFormData({
-  //     ...formData,
-  //     [name]:value
-  //   })
-
-
-  //   const validationError = {};
-  //   if (!formData?.email.trim()) {
-  //     validationError.email = 'Email is required';
-  //   } else if (!/\S+@\S+\.\S+/.test(formData.email) && formData.email.length > 0) {
-  //     validationError.email = 'Invalid email address';
-  //   }
-  
-  //   if (!formData?.password.trim()) {
-  //     validationError.password = 'Password is required';
-  //   } else if (formData?.password.length < 6) {
-  //     validationError.password = 'Password must be at least 6 characters';
-  //   }
-  
-  //   setError(validationError);
-  // }
-
-  // const handleSubmit = (e) => {
-   
-  //   e.preventDefault();
-  
-  //   const validationError = {};
-  //   if (!formData?.email.trim()) {
-  //     validationError.email = 'Email is required';
-  //   } else if (!/\S+@\S+\.\S+/.test(formData.email) && formData.email.length > 1) {
-  //     validationError.email = 'Invalid email address';
-  //   }
-  
-  //   if (!formData?.password.trim()) {
-  //     validationError.password = 'Password is required';
-  //   } else if (formData?.password.length < 6) {
-  //     validationError.password = 'Password must be at least 6 characters';
-  //   }
-  
-  //   setError(validationError);
-  
-  //   if (Object.keys(validationError).length === 0) {
-  //     alert('Form submit Success');
-  //     console.log(formData);
-  //     setFormData('')
-
-  //   }
-  // };
-  //Use Formi
   return (
       <div className="flex min-h-full flex-col justify-center px-6 py-12 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">

@@ -120,7 +120,7 @@ const {handleBlur,handleChange,handleSubmit,errors} = useFormik({
   validationSchema:signUpFormValidation,
   onSubmit:values=> {
     console.log(values)
-    const result = postMethodData('http://localhost:3000/auth/register','POST',values)
+    const result = postMethodData('auth/register','POST',values)
     result.then(json => {
       setIsLoading(true);
       if(Object.keys(json).length > 0) {    
